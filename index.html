@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAYA Marketing | Soluciones Digitales</title>
+    <style>
+        /* CSS INTEGRADO - Minimalista y Moderno */
+        :root {
+            --bg: #0a0a0a;
+            --text: #ffffff;
+            --accent: #22d3ee;
+            --card-bg: #141414;
+            --border: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 40px 0;
+            text-align: left;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* SERVICIOS */
+        .services {
+            padding: 100px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        /* SOBRE MI */
+        .about {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .about-content {
+            max-width: 700px;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 100px 0 60px;
+            text-align: center;
+            background: #000;
+        }
+
+        .footer-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-weight: 900;
+        }
+
+        .copyright {
+            margin-top: 80px;
+            font-size: 0.8rem;
+            color: #444;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 3rem; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+  }
+}
+</script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">MAYA <span>marketing</span></div>
+        </header>
+
+        <section class="hero">
+            <h1>MAYA marketing</h1>
+            <p>Soluciones digitales bilingües</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">Start Your Project</a>
+                <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="services">
+            <h2 style="text-align: center; font-size: 2rem;">Servicios</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <h3>Identidad Express</h3>
+                    <div class="price">$497</div>
+                    <p>Logotipo, paleta de colores y guía básica para que tu negocio tenga presencia profesional hoy mismo.</p>
+                </div>
+                <div class="card">
+                    <h3>Tienda 5 Días</h3>
+                    <div class="price">$1299</div>
+                    <p>Tu plataforma de e-commerce lista para vender, configurada y optimizada para todos los dispositivos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+                <h2>Sobre mí</h2>
+                <p>Estratega digital enfocado en la simplicidad y los resultados. Ayudo a marcas a navegar el mercado bilingüe con claridad y eficiencia.</p>
+                <p>Creo en el diseño funcional y el marketing directo que convierte visitantes en clientes sin complicaciones innecesarias.</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-cta">
+                <h2>¿Listo para escalar?</h2>
+                <a href="#" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Agendar Llamada Gratis</a>
+            </div>
+            <p class="copyright">&copy; 2025 MAYA Marketing. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
