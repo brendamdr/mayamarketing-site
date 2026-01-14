@@ -3,256 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAYA Marketing | Soluciones Digitales</title>
+    <title>MAYA Marketing | Soluciones Digitales Bilingües</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS INTEGRADO - Minimalista y Moderno */
-        :root {
-            --bg: #0a0a0a;
-            --text: #ffffff;
-            --accent: #22d3ee;
-            --card-bg: #141414;
-            --border: #262626;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
-
+        
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        /* HEADER */
-        header {
-            padding: 40px 0;
-            text-align: left;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        /* HERO */
+        
+        /* HERO SECTION */
         .hero {
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
+            border-bottom: 1px solid #333;
         }
-
+        
         .hero h1 {
-            font-size: clamp(3rem, 10vw, 5rem);
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            line-height: 1.1;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
-
+        
         .hero p {
-            font-size: 1.25rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            font-size: 1.5rem;
+            color: #d4d4d4;
             margin-bottom: 40px;
         }
-
+        
+        /* BUTTONS */
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-
+        
         .btn {
-            padding: 18px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
+            padding: 16px 32px;
             text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             display: inline-block;
-            border: none;
         }
-
+        
         .btn-primary {
-            background-color: var(--accent);
-            color: #000;
+            background-color: #22d3ee;
+            color: #000000;
+            border: 2px solid #22d3ee;
         }
-
+        
         .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            background-color: #0ea5e9;
+            border-color: #0ea5e9;
         }
-
-        .btn-outline {
+        
+        .btn-secondary {
             background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
+            color: #ffffff;
+            border: 2px solid #ffffff;
         }
-
-        .btn-outline:hover {
-            background-color: #fff;
-            color: #000;
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        /* SERVICIOS */
+        
+        /* SERVICES */
         .services {
-            padding: 100px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
+            padding: 80px 20px;
             text-align: center;
         }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #ffffff;
         }
-
+        
+        .service-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .service-card {
+            background-color: #111111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 40px 30px;
+            width: 350px;
+            text-align: left;
+        }
+        
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #22d3ee;
+            margin-bottom: 15px;
+        }
+        
         .price {
             font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--accent);
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 20px;
         }
-
-        .card p {
-            color: #888;
-            font-size: 0.95rem;
+        
+        .service-card p {
+            color: #d4d4d4;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
-
-        /* SOBRE MI */
+        
+        .btn-service {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 24px;
+            width: 100%;
+        }
+        
+        .btn-service:hover {
+            background-color: #22d3ee;
+            border-color: #22d3ee;
+            color: #000000;
+        }
+        
+        /* ABOUT */
         .about {
-            padding: 100px 0;
-            border-top: 1px solid var(--border);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
         }
-
-        .about-content {
-            max-width: 700px;
-        }
-
+        
         .about h2 {
             font-size: 2.5rem;
             margin-bottom: 30px;
+            color: #ffffff;
         }
-
+        
         .about p {
-            color: #888;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #d4d4d4;
+            max-width: 800px;
+            margin: 0 auto 30px;
         }
-
+        
+        /* CTA */
+        .cta {
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: #d4d4d4;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-cta {
+            background-color: #22d3ee;
+            color: #000000;
+            border: 2px solid #22d3ee;
+            padding: 18px 45px;
+            font-size: 1.3rem;
+        }
+        
+        .btn-cta:hover {
+            background-color: #0ea5e9;
+            border-color: #0ea5e9;
+        }
+        
         /* FOOTER */
         footer {
-            padding: 100px 0 60px;
+            padding: 40px 20px;
             text-align: center;
-            background: #000;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
         }
-
-        .footer-cta h2 {
-            font-size: 3rem;
-            margin-bottom: 40px;
-            font-weight: 900;
-        }
-
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.8rem;
-            color: #444;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 3rem; }
-            .btn { width: 100%; text-align: center; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 400px;
+            }
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
-  }
-}
-</script>
 </head>
 <body>
-
     <div class="container">
-        <header>
-            <div class="logo">MAYA <span>marketing</span></div>
-        </header>
-
+        <!-- HERO SECTION -->
         <section class="hero">
-            <h1>MAYA marketing</h1>
-            <p>Soluciones digitales bilingües</p>
+            <h1>MAYA</h1>
+            <p style="font-size: 1.8rem; font-weight: 300; margin-top: -10px;">marketing</p>
+            <p>Soluciones digitales bilingües. Precios fijos. Entregas en días, no en meses.</p>
             <div class="btn-group">
-                <a href="#" class="btn btn-primary">Start Your Project</a>
-                <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+                <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-primary" target="_blank">Start Your Project →</a>
+                <a href="#services" class="btn btn-secondary">Ver Servicios</a>
             </div>
         </section>
-
-        <section id="servicios" class="services">
-            <h2 style="text-align: center; font-size: 2rem;">Servicios</h2>
-            <div class="services-grid">
-                <div class="card">
-                    <h3>Identidad Express</h3>
-                    <div class="price">$497</div>
-                    <p>Logotipo, paleta de colores y guía básica para que tu negocio tenga presencia profesional hoy mismo.</p>
+        
+        <!-- SERVICES SECTION -->
+        <section id="services" class="services">
+            <h2>Nuestros Servicios Express</h2>
+            <p style="color: #999; margin-bottom: 50px; font-size: 1.1rem;">Fast & clear deliverables.</p>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>IDENTIDAD EXPRESS</h3>
+                    <div class="price">$497 USD</div>
+                    <p>Logotipo profesional en 3 versiones, paleta de colores y guía básica de marca. Entregado en 72 horas.</p>
+                    <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-service" target="_blank">Seleccionar →</a>
                 </div>
-                <div class="card">
-                    <h3>Tienda 5 Días</h3>
-                    <div class="price">$1299</div>
-                    <p>Tu plataforma de e-commerce lista para vender, configurada y optimizada para todos los dispositivos.</p>
+                
+                <div class="service-card">
+                    <h3>TIENDA 5 DÍAS</h3>
+                    <div class="price">$1,299 USD</div>
+                    <p>Tu tienda Shopify completa: configuración, diseño, pasarelas de pago y 10 productos. Lista para vender en 5 días hábiles.</p>
+                    <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-service" target="_blank">Seleccionar →</a>
                 </div>
             </div>
         </section>
-
+        
+        <!-- ABOUT SECTION -->
         <section class="about">
-            <div class="about-content">
-                <h2>Sobre mí</h2>
-                <p>Estratega digital enfocado en la simplicidad y los resultados. Ayudo a marcas a navegar el mercado bilingüe con claridad y eficiencia.</p>
-                <p>Creo en el diseño funcional y el marketing directo que convierte visitantes en clientes sin complicaciones innecesarias.</p>
-            </div>
+            <h2>Hola, soy Maya.</h2>
+            <p><strong>Bilingual Marketing Consultant</strong></p>
+            <p>Ayudo a fundadores y pequeñas empresas a materializar su presencia digital con estrategias claras y ejecución rápida. Especializada en lanzamiento de marcas y comercio electrónico.</p>
+            <p style="color: #22d3ee;">✓ Diagnóstico en 48 horas<br>
+               ✓ Comunicación fluida en español/inglés<br>
+               ✓ Entregas por etapas, sin contratos largos</p>
         </section>
-
+        
+        <!-- CTA SECTION -->
+        <section class="cta">
+            <h2>¿Tu proyecto no puede esperar?</h2>
+            <p>Let's talk. Una llamada de 15 minutos puede aclarar tu camino.</p>
+            <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-cta" target="_blank">⬤ Agendar Llamada Gratis de 15 min</a>
+        </section>
+        
+        <!-- FOOTER -->
         <footer>
-            <div class="footer-cta">
-                <h2>¿Listo para escalar?</h2>
-                <a href="#" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Agendar Llamada Gratis</a>
-            </div>
-            <p class="copyright">&copy; 2025 MAYA Marketing. All rights reserved.</p>
+            <p>©️ 2023 MAYA Marketing. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px;">✉️ hola@mayamarketing.com | 🌍 Disponible para proyectos remotos</p>
         </footer>
     </div>
-
 </body>
 </html>
