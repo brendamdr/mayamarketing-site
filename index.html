@@ -35,17 +35,18 @@
             padding: 0 20px;
         }
         
-        /* HERO SECTION - ELEGANTE */
+        /* HERO SECTION - CON EFECTO NEÓN */
         .hero {
             text-align: center;
             padding: 140px 20px;
-            background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+            background: radial-gradient(ellipse at center, #0c0c0c 0%, #0a0a0a 70%);
             position: relative;
             min-height: 95vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
         
         .hero::before {
@@ -64,33 +65,49 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
+            width: 150px;
             height: 2px;
             background: #22d3ee;
             opacity: 0.7;
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
         }
         
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 5rem;
-            font-weight: 300;
+            font-weight: 200;
             letter-spacing: 4px;
             margin-bottom: 5px;
             color: #ffffff;
             text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
         
         .hero .subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.6rem;
             font-weight: 300;
-            color: #a1a1a1;
+            color: #22d3ee;
             margin-bottom: 40px;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero .subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background: #22d3ee;
+            opacity: 0.5;
         }
         
         .hero .tagline {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #cccccc;
             margin-bottom: 70px;
             max-width: 700px;
@@ -98,7 +115,7 @@
             line-height: 1.8;
         }
         
-        /* BOTONES ELEGANTES */
+        /* BOTONES CON CHISPA */
         .btn-group {
             display: flex;
             gap: 25px;
@@ -108,9 +125,9 @@
         }
         
         .btn {
-            padding: 18px 40px;
+            padding: 18px 42px;
             text-decoration: none;
-            border-radius: 0;
+            border-radius: 2px;
             font-weight: 500;
             font-size: 1rem;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -122,47 +139,48 @@
             border: none;
         }
         
-        .btn::after {
+        .btn::before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 0;
+            left: -100%;
             width: 100%;
-            height: 1px;
-            background: rgba(255,255,255,0.2);
-            transform: scaleX(0);
-            transition: transform 0.4s;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.7s;
         }
         
-        .btn:hover::after {
-            transform: scaleX(1);
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn-primary {
             background-color: #22d3ee;
             color: #000000;
-            box-shadow: 0 5px 20px rgba(34, 211, 238, 0.2);
+            box-shadow: 0 5px 20px rgba(34, 211, 238, 0.3), 
+                        inset 0 1px 0 rgba(255,255,255,0.2);
         }
         
         .btn-primary:hover {
             background-color: #0ea5e9;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.4),
+                        inset 0 1px 0 rgba(255,255,255,0.3);
         }
         
         .btn-secondary {
             background-color: transparent;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1.5px solid #ffffff;
         }
         
         .btn-secondary:hover {
             background-color: rgba(255, 255, 255, 0.05);
             transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.7);
         }
         
-        /* SERVICES SECTION */
+        /* SERVICES SECTION - CON DESTACADOS */
         .services {
             padding: 140px 20px;
             background-color: #0c0c0c;
@@ -186,8 +204,8 @@
         
         .services-header h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 2.8rem;
+            font-weight: 200;
             color: #ffffff;
             letter-spacing: 3px;
             margin-bottom: 15px;
@@ -210,9 +228,9 @@
         }
         
         .service-card {
-            background: rgba(20, 20, 20, 0.8);
+            background: rgba(18, 18, 18, 0.9);
             border: 1px solid #222;
-            border-radius: 2px;
+            border-radius: 3px;
             padding: 50px 35px;
             width: 380px;
             text-align: left;
@@ -221,40 +239,33 @@
             backdrop-filter: blur(10px);
         }
         
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: #22d3ee;
-            transform: scaleY(0);
-            transition: transform 0.5s;
-            transform-origin: top;
-        }
-        
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-        
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: #333;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+                        0 0 0 1px rgba(34, 211, 238, 0.1);
         }
         
         .service-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #22d3ee;
             margin-bottom: 20px;
             font-weight: 400;
             letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-card h3::before {
+            content: '▸';
+            color: #22d3ee;
+            font-size: 1.2rem;
         }
         
         .price {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 25px;
@@ -283,9 +294,17 @@
             line-height: 1.8;
         }
         
-        .service-card strong {
+        .service-card .highlight {
             color: #22d3ee;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .service-card .highlight::before {
+            content: '✦';
+            font-size: 0.9rem;
         }
         
         .btn-service {
@@ -297,38 +316,96 @@
             font-size: 0.9rem;
             letter-spacing: 1.5px;
             text-align: center;
+            transition: all 0.3s;
         }
         
         .btn-service:hover {
             background-color: #22d3ee;
             border-color: #22d3ee;
             color: #000000;
+            letter-spacing: 2px;
         }
         
-        /* ABOUT SECTION */
-        .about {
-            padding: 140px 20px;
-            text-align: center;
+        /* FEATURES SECTION - CON PALOMITAS DESTACADAS */
+        .features-section {
+            padding: 100px 20px;
             background-color: #0a0a0a;
+            position: relative;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        
+        .features-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .features-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #222;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #333;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #22d3ee;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .feature-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .feature-card p {
+            color: #aaa;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* ABOUT SECTION MEJORADA */
+        .about {
+            padding: 120px 20px;
+            text-align: center;
+            background-color: #0c0c0c;
             position: relative;
         }
         
-        .about::before, .about::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #333, transparent);
-        }
-        
-        .about::before { top: 0; }
-        .about::after { bottom: 0; }
-        
         .about h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 2.8rem;
+            font-weight: 200;
             margin-bottom: 10px;
             color: #ffffff;
             letter-spacing: 2px;
@@ -351,25 +428,51 @@
             line-height: 1.9;
         }
         
-        .features {
+        /* BENEFITS - CON PALOMITAS ESTILIZADAS */
+        .benefits {
             display: inline-block;
             text-align: left;
             margin-top: 50px;
             color: #ddd;
             font-size: 1.1rem;
             line-height: 2.2;
+            max-width: 600px;
         }
         
-        .features strong {
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .benefit-icon {
             color: #22d3ee;
+            font-size: 1.3rem;
+            min-width: 25px;
+            text-align: center;
         }
         
-        /* CTA SECTION */
+        .benefit-text {
+            flex: 1;
+        }
+        
+        .benefit-text strong {
+            color: #22d3ee;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+        
+        /* CTA SECTION CON EFECTO */
         .cta {
             padding: 150px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%);
+            background: radial-gradient(ellipse at center, #111111 0%, #0a0a0a 100%);
             position: relative;
+            overflow: hidden;
         }
         
         .cta::before {
@@ -384,11 +487,25 @@
         
         .cta h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 2.8rem;
+            font-weight: 200;
             margin-bottom: 25px;
             color: #ffffff;
             letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cta h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: #22d3ee;
+            opacity: 0.7;
         }
         
         .cta p {
@@ -409,20 +526,41 @@
             padding: 22px 50px;
             font-size: 1.1rem;
             letter-spacing: 2px;
-            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.25);
+            box-shadow: 0 8px 25px rgba(34, 211, 238, 0.3),
+                        inset 0 1px 0 rgba(255,255,255,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: transform 0.6s;
+        }
+        
+        .btn-cta:hover::after {
+            transform: rotate(45deg) translate(10%, 10%);
         }
         
         .btn-cta:hover {
             background-color: #0ea5e9;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(34, 211, 238, 0.35);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(34, 211, 238, 0.4),
+                        inset 0 1px 0 rgba(255,255,255,0.4);
         }
         
         .btn-cta i {
-            margin-right: 10px;
+            margin-right: 12px;
+            font-size: 1.2rem;
         }
         
-        /* FOOTER ELEGANTE */
+        /* FOOTER CON CHISPA */
         footer {
             padding: 80px 20px 60px;
             text-align: center;
@@ -431,16 +569,30 @@
             border-top: 1px solid #222;
             line-height: 1.8;
             background-color: #0a0a0a;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: #22d3ee;
+            opacity: 0.5;
         }
         
         .footer-logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 3px;
+            font-size: 2rem;
+            font-weight: 200;
+            letter-spacing: 4px;
             color: #fff;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             opacity: 0.9;
+            text-transform: uppercase;
         }
         
         .footer-contact {
@@ -451,17 +603,23 @@
         }
         
         .contact-item {
-            margin: 18px 0;
+            margin: 20px 0;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
         }
         
         .contact-item i {
             color: #22d3ee;
-            font-size: 1.1rem;
-            width: 20px;
+            font-size: 1.2rem;
+            width: 25px;
+            text-align: center;
         }
         
         .contact-label {
@@ -469,6 +627,8 @@
             font-weight: 500;
             min-width: 80px;
             text-align: right;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         
         .contact-value {
@@ -476,20 +636,27 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 300;
+            font-size: 1rem;
         }
         
         .contact-value:hover {
             color: #22d3ee;
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
         }
         
         .footer-note {
             color: #666;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             max-width: 500px;
-            margin: 40px auto 0;
+            margin: 50px auto 0;
             padding-top: 30px;
             border-top: 1px solid #333;
             line-height: 1.7;
+        }
+        
+        .footer-highlight {
+            color: #22d3ee;
+            font-weight: 500;
         }
         
         .copyright {
@@ -497,85 +664,37 @@
             color: #555;
             letter-spacing: 1px;
             margin-top: 40px;
+            opacity: 0.7;
         }
         
         /* RESPONSIVE */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 4rem;
-                letter-spacing: 3px;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.3rem;
-                letter-spacing: 4px;
             }
             
             .service-card {
                 width: 100%;
                 max-width: 450px;
             }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
         
         @media (max-width: 768px) {
             .hero {
                 padding: 100px 20px;
-                min-height: 85vh;
             }
             
             .hero h1 {
                 font-size: 3rem;
-                letter-spacing: 2px;
             }
             
             .hero .subtitle {
-                font-size: 1.1rem;
-                letter-spacing: 3px;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-                margin-bottom: 50px;
-            }
-            
-            .btn {
-                padding: 16px 30px;
-                font-size: 0.95rem;
-            }
-            
-            .btn-group {
-                gap: 15px;
-            }
-            
-            .services, .about, .cta {
-                padding: 100px 20px;
-            }
-            
-            .services-header h2, .about h2, .cta h2 {
-                font-size: 2rem;
-            }
-            
-            .price {
-                font-size: 2.4rem;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .contact-label {
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1rem;
+                font-size: 1.2rem;
+                letter-spacing: 5px;
             }
             
             .btn-group {
@@ -588,9 +707,19 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .contact-item {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            
+            .contact-label {
+                text-align: center;
+            }
         }
         
-        /* ANIMACIONES SUTILES */
+        /* ANIMACIONES */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -602,14 +731,19 @@
             }
         }
         
-        .hero h1, .hero .subtitle, .hero .tagline, .btn-group {
-            animation: fadeInUp 0.8s ease-out forwards;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
-        .hero h1 { animation-delay: 0.1s; }
-        .hero .subtitle { animation-delay: 0.3s; }
-        .hero .tagline { animation-delay: 0.5s; }
-        .btn-group { animation-delay: 0.7s; }
+        .hero h1 { animation: fadeInUp 0.8s ease-out; }
+        .hero .subtitle { animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .hero .tagline { animation: fadeInUp 0.8s ease-out 0.4s both; }
+        .btn-group { animation: fadeInUp 0.8s ease-out 0.6s both; }
+        
+        .service-card:hover {
+            animation: float 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
@@ -639,7 +773,7 @@
                         <span class="currency">$</span>497
                         <span class="unit">USD</span>
                     </div>
-                    <p>Logotipo profesional en 3 versiones, paleta de colores y guía básica de marca. <strong>Entrega en 72 horas.</strong></p>
+                    <p>Logotipo profesional en 3 versiones, paleta de colores y guía básica de marca. <span class="highlight">Entrega en 72 horas.</span></p>
                     <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-service" target="_blank">Seleccionar →</a>
                 </div>
                 
@@ -649,22 +783,76 @@
                         <span class="currency">$</span>1,299
                         <span class="unit">USD</span>
                     </div>
-                    <p>Tu tienda Shopify completa: configuración, diseño, pasarelas de pago y 10 productos. <strong>Entrega en 5 días hábiles, lista para empezar a vender.</strong></p>
+                    <p>Tu tienda Shopify completa: configuración, diseño, pasarelas de pago y 10 productos. <span class="highlight">Entrega en 5 días hábiles, lista para empezar a vender.</span></p>
                     <a href="https://calendly.com/delarosa-brendam/bren-s" class="btn btn-service" target="_blank">Seleccionar →</a>
                 </div>
             </div>
         </section>
         
-        <!-- ABOUT SECTION -->
+        <!-- FEATURES SECTION - CON PALOMITAS DESTACADAS -->
+        <section class="features-section">
+            <div class="features-container">
+                <h3 class="features-title">¿Por qué trabajar conmigo?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Rapidez Ejecutiva</h4>
+                        <p>No meses, sino días. Tu proyecto avanza con entregas concretas cada 72 horas.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h4>Bilingüe Nativo</h4>
+                        <p>Comunicación perfecta en español/inglés. Estrategias que funcionan en mercados globales.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h4>Enfoque Directo</h4>
+                        <p>Sin reuniones interminables. Diagnóstico en 48h y plan de acción claro desde el día 1.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ABOUT SECTION MEJORADA -->
         <section class="about">
             <h2>Hola, soy Maya.</h2>
             <div class="title-accent">Bilingual Marketing Consultant</div>
             <p>Ayudo a <strong>startups y pequeñas empresas</strong> a materializar su presencia digital con estrategias claras y ejecución rápida. Especializada en lanzamiento de marcas y comercio electrónico.</p>
-            <div class="features">
-                ✓ Diagnóstico en 48 horas<br>
-                ✓ Comunicación fluida en español/inglés<br>
-                ✓ <strong>Consultoría 100% remota</strong> - disponible worldwide<br>
-                ✓ Entregas por etapas, sin contratos largos
+            
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Diagnóstico en 48 horas</strong><br>
+                        Análisis rápido y plan de acción desde la primera semana.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Comunicación fluida en español/inglés</strong><br>
+                        Sin barreras de idioma, perfecto para negocios internacionales.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Consultoría 100% remota</strong><br>
+                        Colaboración desde cualquier lugar del mundo, sin límites geográficos.
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <strong>Entregas por etapas</strong><br>
+                        Sin contratos largos, pagas por resultados concretos.
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -677,7 +865,7 @@
             </a>
         </section>
         
-        <!-- FOOTER ELEGANTE -->
+        <!-- FOOTER CON CHISPA -->
         <footer>
             <div class="footer-logo">MAYA MARKETING</div>
             
@@ -696,8 +884,13 @@
             </div>
             
             <div class="footer-note">
-                🌍 Consultoría 100% remota • Disponible para proyectos internacionales<br>
-                <span style="font-size: 0.8rem;">Respuesta en menos de 24 horas</span>
+                <span class="footer-highlight">⚡ Rapidez</span> • 
+                <span class="footer-highlight">🌐 Bilingüe</span> • 
+                <span class="footer-highlight">🎯 Directo</span> • 
+                <span class="footer-highlight">🌍 100% Remoto</span><br>
+                <span style="font-size: 0.85rem; display: block; margin-top: 8px;">
+                    Respuesta garantizada en menos de 24 horas
+                </span>
             </div>
             
             <div class="copyright">
